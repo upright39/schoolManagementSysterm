@@ -8,9 +8,12 @@ use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
+use App\Http\Controllers\Backend\Setup\AssignSubjectController;
+use App\Http\Controllers\Backend\Setup\StudentSubjectController;
+use App\Http\Controllers\Backend\Setup\StudentExamTypeController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryAmountController;
 use App\Http\Controllers\Backend\Setup\StudentFeeCategoryController;
-
+use App\Http\Controllers\Backend\Setup\DesignationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,4 +116,62 @@ Route::prefix('setups')->group(function () {
 
     Route::get('/student/category/amount', [FeeCategoryAmountController::class, 'veiwFeeAmount'])->name('view.feecategoryamount');
     Route::get('/add/student/amount', [FeeCategoryAmountController::class, 'addFeeAmount'])->name('add.amount');
+    Route::post('/store/student/amount', [FeeCategoryAmountController::class, 'storeFeeAmount'])->name('store.amount');
+    Route::get('/edith/student/amount/{feecategory_id}', [FeeCategoryAmountController::class, 'edithFeeAmount'])->name('edith.amount');
+    Route::post('/update/student/amount/{feecategory_id}', [FeeCategoryAmountController::class, 'updateFeeAmount'])->name('update.amount');
+
+    Route::get('/details/student/amount/{feecategory_id}', [FeeCategoryAmountController::class, 'detailsFeeAmount'])->name('details_amount');
+
+    // students exam type routes
+
+    Route::get('/student/exam/type', [StudentExamTypeController::class, 'veiwStudentExamType'])->name('view.exam.type');
+
+    Route::get('/add/student/examtype', [StudentExamTypeController::class, 'addStudentExamType'])->name('add.examtype');
+
+    Route::post('/store/student/exam-type', [StudentExamTypeController::class, 'storeStudentExamType'])->name('store.exam.type');
+
+
+    Route::get('/edith/student/exam/{id}', [StudentExamTypeController::class, 'edithStudentExamType'])->name('edith.exem.type');
+    Route::post('/update/student/shifts/{id}', [StudentExamTypeController::class, 'updateStudentExamType'])->name('update.exam.type');
+
+    Route::get('/delete/student/exam-type/{id}', [StudentExamTypeController::class, 'deleteStudentExamType'])->name('delete.exam.type');
+
+
+
+    // students  subject routes
+    Route::get('/student/subject', [StudentSubjectController::class, 'veiwStudentSubject'])->name('view.subject');
+    Route::get('/add/student/subject', [StudentSubjectController::class, 'addStudentSubject'])->name('add.subject');
+    Route::post('/store/student/subject', [StudentSubjectController::class, 'storeStudentSubject'])->name('store.subject');
+    Route::get('/edith/student/subject/{id}', [StudentSubjectController::class, 'edithStudentSubject'])->name('edith.subject');
+    Route::post('/update/student/subject/{id}', [StudentSubjectController::class, 'updateStudentSubject'])->name('update.subject');
+    Route::get('/delete/student/subject/{id}', [StudentSubjectController::class, 'deleteStudentSubject'])->name('delete.subject');
+
+
+
+
+    //student Assign Subject Routes
+
+    Route::get('/student/asign/subject', [AssignSubjectController::class, 'veiwAssignSubject'])->name('view.assign.subject');
+
+    Route::get('/add/asign/subject', [AssignSubjectController::class, 'addAssignSubject'])->name('add.assign.subject');
+
+    Route::post('/store/asign/subject', [AssignSubjectController::class, 'storeAssignSubject'])->name('store.assign.subject');
+
+    Route::get('/edith/asign/subject/{student_class_id}', [AssignSubjectController::class, 'edithAssignSubject'])->name('edith.asign.subject');
+
+    Route::post('/update/asign/subject/{student_class_id}', [AssignSubjectController::class, 'UpdateAssignSubject'])->name('update.assign.subject');
+
+
+    Route::get('/details/asign/subject/{student_class_id}', [AssignSubjectController::class, 'detailsAssignSubject'])->name('details.asign.subject');
+
+
+
+    // students  designation routes
+
+    Route::get('/student/designation', [DesignationController::class, 'veiwDesignation'])->name('view.designation');
+    Route::get('/add/designation', [DesignationController::class, 'addDesignation'])->name('add.designation');
+    Route::post('/store/designation', [DesignationController::class, 'storeDesignation'])->name('store.designation');
+    Route::get('/edith/designation/{id}', [DesignationController::class, 'edithDesignation'])->name('edith.designation');
+    Route::post('/update/designation/{id}', [DesignationController::class, 'updateDesignation'])->name('update.designation');
+    Route::get('/delete/designation/{id}', [DesignationController::class, 'deleteDesignation'])->name('delete.designation');
 });

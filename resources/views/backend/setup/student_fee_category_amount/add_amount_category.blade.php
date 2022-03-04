@@ -15,14 +15,14 @@
      <!-- Basic Forms -->
      <div class="box">
       <div class="box-header with-border">
-       <h4 class="box-title">Add User</h4>
+       <h4 class="box-title">Add Amount</h4>
 
       </div>
       <!-- /.box-header -->
       <div class="box-body">
        <div class="row">
         <div class="col">
-         <form method="post" action="{{route('store.user')}}">
+         <form method="post" action="{{route('store.amount')}}">
           @csrf
           <div class="add_item">
            <div class="row">
@@ -48,7 +48,7 @@
               <div class="controls">
                <select name="class_id[]" class="form-control">
                 @foreach($studentClass as $class)
-                <option value="$class->id">{{$class->name}}</option>
+                <option value="{{$class->id}}">{{$class->name}}</option>
                 @endforeach
 
                </select>
@@ -105,7 +105,7 @@
         <div class="controls">
          <select name="class_id[]" class="form-control">
           @foreach($studentClass as $class)
-          <option value="$class->id">{{$class->name}}</option>
+          <option value="{{$class->id}}">{{$class->name}}</option>
           @endforeach
 
          </select>

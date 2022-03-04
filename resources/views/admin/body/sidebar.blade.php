@@ -69,8 +69,12 @@ $route = Route::current()->getName();
      <li><a href="{{route('view.year')}}"><i class="ti-more"></i>Studnt Year</a></li>
      <li><a href="{{route('view.group')}}"><i class="ti-more"></i>Studnt Group</a></li>
      <li><a href="{{route('view.shift')}}"><i class="ti-more"></i>Studnt Shift</a></li>
-     <li><a href="{{route('view.feecategory')}}"><i class="ti-more"></i>Studnt Fee Category</a></li>
-     <li><a href="{{route('view.feecategoryamount')}}"><i class="ti-more"></i>Studnt Fee Category Amount</a></li>
+     <li><a href="{{route('view.feecategory')}}"><i class="ti-more"></i>Student Fee Category</a></li>
+     <li><a href="{{route('view.feecategoryamount')}}"><i class="ti-more"></i>Student Fee Amount</a></li>
+     <li><a href="{{route('view.exam.type')}}"><i class="ti-more"></i>Student Exam Type</a></li>
+     <li><a href="{{route('view.subject')}}"><i class="ti-more"></i>Student Subject</a></li>
+     <li><a href="{{route('view.assign.subject')}}"><i class="ti-more"></i>Assign Subject</a></li>
+     <li><a href="{{route('view.designation')}}"><i class="ti-more"></i>Designation</a></li>
     </ul>
    </li>
 
