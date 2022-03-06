@@ -15,6 +15,7 @@ class CreateStudentExamTypesTable extends Migration
     {
         Schema::create('student_exam_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->uniqid();
             $table->timestamps();
         });
     }

@@ -13,8 +13,13 @@ class CreateAssignSubjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('assign_subjects', function (Blueprint $table) {
+        Schema::create('assign_subjets', function (Blueprint $table) {
             $table->id();
+            $table->integer('student_class_id');
+            $table->integer('student_subject_id');
+            $table->double('full_mark');
+            $table->double('pass_mark');
+            $table->double('fail_mark');
             $table->timestamps();
         });
     }

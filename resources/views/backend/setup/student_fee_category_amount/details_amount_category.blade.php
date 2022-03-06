@@ -15,33 +15,31 @@
 
        <div class="box">
         <div class="box-header with-border">
-         <h3 class="box-title">Student Fee Category List</h3>
-         <a href="{{route('add.feecategory')}}" style="float: right;" class="btn btn-rounded btn-success  mb-5">Add
-          Category</a>
+         <h3 class="box-title">Student Fee Amount list</h3>
+         <a href="{{route('add.amount')}}" style="float: right;" class="btn btn-rounded btn-success  mb-5">Add
+          Amount</a>
         </div>
-        <!-- /.box-header -->
+        <!-- /.boview_assign_subjectx-header -->
         <div class="box-body">
          <div class="table-responsive">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="" class="table table-bordered table-striped">
            <thead>
             <tr>
              <th width="5%">SN</th>
-             <th>Shift</th>
+             <th>Fee</th>
              <th>Action</th>
             </tr>
            </thead>
            <tbody>
-            @foreach($FeeCategory as $key=>$category)
+            @foreach($details_amount as $key=>$amounts)
             <tr>
 
              <td>{{$key+1}}</td>
-             <td>{{$category->name}}</td>
+             <td>{{$amounts['class_category']['name'] }}</td>
 
              <td>
 
-              <a href="{{route('edith.feecategory',$category->id)}}" class="btn btn-info btn-sm btn-rounded">EDITH</a>
-              <a href="{{route('delete.feecategory',$category->id)}}" class="btn btn-danger btn-sm btn-rounded"
-               id="delete">DEL</a>
+              {{$amounts->amount}}
              </td>
 
             </tr>

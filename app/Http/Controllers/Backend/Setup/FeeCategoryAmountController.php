@@ -62,7 +62,7 @@ class FeeCategoryAmountController extends Controller
 
 
 
-        return view('backend.setup.student_fee_category_amount.edith_fee_category', $data);
+        return view('backend.setup.student_fee_category_amount.edith_amount_category', $data);
     }
 
 

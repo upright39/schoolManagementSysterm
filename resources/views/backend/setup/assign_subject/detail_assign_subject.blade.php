@@ -15,34 +15,34 @@
 
        <div class="box">
         <div class="box-header with-border">
-         <h3 class="box-title">Student Fee Category List</h3>
-         <a href="{{route('add.feecategory')}}" style="float: right;" class="btn btn-rounded btn-success  mb-5">Add
-          Category</a>
+         <h3 class="box-title">Student Assign Subject list</h3>
+
         </div>
-        <!-- /.box-header -->
+        <!-- /.boview_assign_subjectx-header -->
         <div class="box-body">
+         <h4>Class: {{$details['0']->class_function->name}}</h4>
          <div class="table-responsive">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="" class="table table-bordered table-striped">
            <thead>
-            <tr>
+            <tr style="background-color:#7a15f7; color:white">
              <th width="5%">SN</th>
-             <th>Shift</th>
-             <th>Action</th>
+             <th>Subject</th>
+             <th>Full Mark</th>
+             <th>Pass Mark</th>
+             <th>Fail Mark</th>
+
             </tr>
            </thead>
            <tbody>
-            @foreach($FeeCategory as $key=>$category)
-            <tr>
+            @foreach($details as $key=>$data)
+            <tr style="color:aliceblue">
 
              <td>{{$key+1}}</td>
-             <td>{{$category->name}}</td>
+             <td>{{$data->subjectFunction->name}}</td>
+             <td>{{$data->full_mark}}</td>
+             <td>{{$data->pass_mark}}</td>
+             <td>{{$data->fail_mark}}</td>
 
-             <td>
-
-              <a href="{{route('edith.feecategory',$category->id)}}" class="btn btn-info btn-sm btn-rounded">EDITH</a>
-              <a href="{{route('delete.feecategory',$category->id)}}" class="btn btn-danger btn-sm btn-rounded"
-               id="delete">DEL</a>
-             </td>
 
             </tr>
 
