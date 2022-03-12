@@ -79,10 +79,10 @@
             <div class="form-group">
              <h5>User Gender<span class="text-danger"></span></h5>
              <div class="controls">
-              <select name="status" id="select" class="form-control">
+              <select name="gender" id="select" class="form-control">
 
-               <option value="Male" {{$edith->status == "male" ?"selected" :''}}>Male</option>
-               <option value="Female" {{$edith->status =="female" ?"selected" :''}}>Female</option>
+               <option value="Male" {{$edith->gender == "male" ?"selected" :''}}>Male</option>
+               <option value="Female" {{$edith->gender =="female" ?"selected" :''}}>Female</option>
 
               </select>
               <div class="help-block"></div>

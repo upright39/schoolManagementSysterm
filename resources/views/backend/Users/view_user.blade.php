@@ -28,6 +28,7 @@
              <th width="15%">User Type</th>
              <th>Name</th>
              <th>Email</th>
+             <th>Code</th>
              <th>Action</th>
             </tr>
            </thead>
@@ -35,9 +36,10 @@
             @foreach($users as $key=>$user)
             <tr>
              <td>{{$key+1}}</td>
-             <td>{{$user->usertype}}</td>
+             <td>{{$user->role}}</td>
              <td>{{$user->name}}</td>
              <td>{{$user->email}}</td>
+             <td>{{$user->code}}</td>
              <td>
 
               <a href="{{url('users/edith/'.$user->id)}}" class="btn btn-info btn-sm btn-rounded">EDITH</a>

@@ -22,7 +22,7 @@
       <div class="box-body">
        <div class="row">
         <div class="col">
-         <form method="post" action="{{route('store.group')}}">
+         <form method="post" action="{{route('store.exam.type')}}">
           @csrf
           <div class="row">
 

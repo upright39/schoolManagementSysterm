@@ -18,7 +18,7 @@
         <div class="widget-user-header bg-black"
          style="background: url('../images/gallery/full/10.jpg') center center;">
          <h3 class="widget-user-username">UserName: {{$user->name}}</h3>
-         <h6 class="widget-user-desc"> User Type: {{$user->usertype}}</h6>
+         <h6 class="widget-user-desc"> User Type: {{$user->role}}</h6>
          <a href="{{route('edith.profile')}}" style="float: right;" class="btn  btn-rounded btn-success  mb-5">Edith
           Profile</a>
          <h6 class="widget-user-desc">Email: {{$user->email}}</h6>
@@ -49,7 +49,7 @@
           <div class="col-sm-4">
            <div class="description-block">
             <h5 class="description-header">Gender</h5>
-            <span class="description-text">{{$user->status}}</span>
+            <span class="description-text">{{$user->gender}}</span>
            </div>
            <!-- /.description-block -->
           </div>

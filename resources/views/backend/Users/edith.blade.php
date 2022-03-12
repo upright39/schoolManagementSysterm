@@ -30,10 +30,10 @@
             <div class="form-group">
              <h5>Select Role<span class="text-danger"></span></h5>
              <div class="controls">
-              <select name="usertype" id="select" class="form-control">
+              <select name="role" id="select" class="form-control">
 
-               <option value="user" {{$user->usertype == "user" ?"selected" :''}}>User</option>
-               <option value="admin" {{$user->usertype =="admin" ?"selected" :''}}>Admin</option>
+               <option value="Admin" {{$user->role == "Admin" ?"selected" :''}}>Admin</option>
+               <option value="Operator" {{$user->role =="Operator" ?"selected" :''}}>Operator</option>
 
               </select>
               <div class="help-block"></div>

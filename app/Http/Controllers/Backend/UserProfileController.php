@@ -33,7 +33,8 @@ class UserProfileController extends Controller
         $update->email = $request->email;
         $update->mobile = $request->mobile;
         $update->address = $request->address;
-        $update->status = $request->status;
+        $update->gender = $request->gender;
+
 
         if ($request->file('image')) {
 

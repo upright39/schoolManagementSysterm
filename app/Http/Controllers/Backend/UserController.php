@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function userVeiw()
     {
-        $data['users'] = User::all();
+        $data['users'] = User::where('usertype', 'Admin')->get();
 
         return view('backend.Users.view_user', $data);
     }
@@ -25,15 +25,17 @@ class UserController extends Controller
     {
         $validate = $request->validate([
             'email' => 'required|unique:users',
-            'password' => 'required',
             'name' => 'required',
         ]);
 
         $store = new User();
-        $store->usertype = $request->usertype;
+        $code = rand(0000, 9999);
+        $store->usertype = 'Admin';
+        $store->role = $request->role;
         $store->name = $request->name;
         $store->email = $request->email;
-        $store->password = bcrypt($request->password);
+        $store->password = bcrypt($code);
+        $store->code = $code;
         $store->save();
 
         $notification = [
@@ -54,7 +56,7 @@ class UserController extends Controller
     public function updateUser(Request $request, $id)
     {
         $user = User::find($id);
-        $user->usertype = $request->usertype;
+        $user->role = $request->role;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->save();

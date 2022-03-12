@@ -4,16 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\UserProfileController;
+use App\Http\Controllers\Backend\Setup\DesignationController;
 use App\Http\Controllers\Backend\Setup\StudentYearController;
 use App\Http\Controllers\Backend\Setup\StudentClassController;
 use App\Http\Controllers\Backend\Setup\StudentGroupController;
 use App\Http\Controllers\Backend\Setup\StudentShiftController;
 use App\Http\Controllers\Backend\Setup\AssignSubjectController;
+use App\Http\Controllers\Backend\Students\StudentRegController;
 use App\Http\Controllers\Backend\Setup\StudentSubjectController;
 use App\Http\Controllers\Backend\Setup\StudentExamTypeController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryAmountController;
 use App\Http\Controllers\Backend\Setup\StudentFeeCategoryController;
-use App\Http\Controllers\Backend\Setup\DesignationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,4 +175,21 @@ Route::prefix('setups')->group(function () {
     Route::get('/edith/designation/{id}', [DesignationController::class, 'edithDesignation'])->name('edith.designation');
     Route::post('/update/designation/{id}', [DesignationController::class, 'updateDesignation'])->name('update.designation');
     Route::get('/delete/designation/{id}', [DesignationController::class, 'deleteDesignation'])->name('delete.designation');
+});
+
+//STUDENTS REGISTRATION ROUTES
+
+Route::prefix('students')->group(function () {
+    Route::get('/veiw/registration', [StudentRegController::class, 'studentRegVeiw'])->name('view_students_reg');
+    Route::get('/add/registration', [StudentRegController::class, 'addstudentReg'])->name('add_students_reg');
+    Route::post('/store/registration', [StudentRegController::class, 'storeStudentReg'])->name('store_students_reg');
+    Route::get('/class/year/search', [StudentRegController::class, 'SearchYearClass'])->name('year_class_search');
+
+    Route::get('/edith/registration/{student_id}', [StudentRegController::class, 'StudentRegEdith'])->name('edith_students_reg');
+
+    Route::post('/update/registration/{student_id}', [StudentRegController::class, 'updateStudentReg'])->name('update_students_reg');
+
+    Route::get('/promote/student/{student_id}', [StudentRegController::class, 'PromoteStudent'])->name('promote_students_reg');
+
+    Route::post('/store/promotion/{student_id}', [StudentRegController::class, 'StorePromoteStudent'])->name('store_promotion');
 });
