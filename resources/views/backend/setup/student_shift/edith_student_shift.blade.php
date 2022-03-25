@@ -22,7 +22,8 @@
       <div class="box-body">
        <div class="row">
         <div class="col">
-         <form method="post" action="{{route('update.shift',$shift->id)}}">
+
+         <form method="post" action="{{route('update.shifts',$shift->id)}}">
           @csrf
 
           <div class="row">

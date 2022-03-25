@@ -52,25 +52,30 @@ class StudentShiftController extends Controller
         return view('backend.setup.student_shift.edith_student_shift', compact('shift'));
     }
 
-    public function updateStudentShift(Request $request, $id)
+
+
+
+
+    public function UpdateStudentShift(Request $request, $id)
 
     {
-        $updategroup = StudentShift::find($id);
+        $update = StudentShift::find($id);
 
         $validate = $request->validate([
-            'name' => 'required|unique:student_shifts,name,' . $updategroup->id
+            'name' => 'required|unique:student_shifts,name,' . $update->id
         ]);
 
 
-        $updategroup->name = $request->name;
-        $updategroup->save();
+        $update->name = $request->name;
+        $update->save();
 
         $notification = [
-            'message' => 'Group Updated  successfully',
+            'message' => 'Shift Updated  successfully',
             'alert-type' => 'success'
         ];
         return redirect()->route('view.shift')->with($notification);
     }
+
 
 
 

@@ -12,10 +12,12 @@ use App\Models\AssignStudent;
 use App\Models\DiscountStudent;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+// use Barryvdh\DomPDF\Facade as PDF;
+use  PDF;
 
 class StudentRegController extends Controller
 {
-    //
+
 
     public function studentRegVeiw()
     {
@@ -24,7 +26,6 @@ class StudentRegController extends Controller
         $data['Classes'] = StudentClass::all();
         $data['student_year_id'] = StudentYear::orderBy('id', 'desc')->first()->id;
         $data['student_class_id'] = StudentClass::orderBy('id', 'desc')->first()->id;
-
 
         $data['allData'] = AssignStudent::where('student_year_id', $data['student_year_id'])->where('student_class_id', $data['student_class_id'])->get();
 
@@ -230,7 +231,7 @@ class StudentRegController extends Controller
         $data['AssignSub'] = AssignStudent::with('student', 'st_discount_id')->where('student_id', $student_id)->first();
 
 
-        return view(' backend.students.student_registration.promote_student', $data);
+        return view('backend.students.student_registration.promote_student', $data);
     }
 
 
@@ -283,5 +284,18 @@ class StudentRegController extends Controller
         ];
 
         return redirect()->route('view_students_reg')->with($notification);
+    }
+
+
+
+    public function StudentDetails($student_id)
+    {
+
+        $data['AssignSub'] = AssignStudent::with('student', 'st_discount_id')->where('student_id', $student_id)->first();
+
+
+        $pdf = PDF::loadView('backend.students.student_registration.print_student_details', $data);
+        $pdf->SetProtection(['copy', 'print'], '', 'pass');
+        return $pdf->stream('document.pdf');
     }
 }

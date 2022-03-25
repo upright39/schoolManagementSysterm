@@ -10,7 +10,7 @@
 
     <section class="content">
      <div class="row">
-      <div class="col-12">
+      <div class="col-12 box bb-3 border-warning">
 
        <!-- search section parth -->
        <div class="box bb-3 border-warning">
@@ -57,7 +57,7 @@
             </div>
            </div>
 
-           <div class="col-4" style="padding-top: 25px;">
+           <div class="col-4 " style="padding-top: 25px;">
 
             <div class="form-group">
              <input type="submit" class="btn btn-rounded btn-dark mb-5" value="Search" name="Search">
@@ -80,7 +80,7 @@
           Student</a>
         </div>
         <!-- /.box-header -->
-        <div class="box-body">
+        <div class="box-body ">
          <div class="table-responsive">
 
           @if(!@Search)
@@ -95,7 +95,7 @@
              <th>Class</th>
              <th>Image</th>
              <th>Code</th>
-             <th>Action</th>
+             <th>Edith/ Promote/ Print</th>
             </tr>
            </thead>
            <tbody>
@@ -119,10 +119,13 @@
              </td>
              <td>
 
-              <a href="{{route('edith_students_reg',$value->student_id)}}"
-               class="btn btn-info btn-sm btn-rounded">EDITH</a>
-              <a href="{{route('promote_students_reg',$value->student_id)}}"
-               class="btn btn-danger btn-sm btn-rounded">PROMOTE</a>
+              <a title="Edith" href="{{route('edith_students_reg',$value->student_id)}}"
+               class="btn btn-info  btn-rounded"><i class="fa fa-edit"></i></a>
+              <a title="Promote" href="{{route('promote_students_reg',$value->student_id)}}"
+               class="btn btn-primary  btn-rounded"><i class="fa fa-check"></i></a>
+              <a target="_blank" title="Print" href="{{route('details_students_reg',$value->student_id)}}"
+               class="btn btn-warning  btn-rounded"><i class="fa fa-eye"></i></a>
+
              </td>
 
             </tr>
@@ -143,7 +146,7 @@
              <th>Class</th>
              <th>Image</th>
              <th>Code</th>
-             <th>Action</th>
+             <th>Edith/ Promote/ Print</th>
             </tr>
            </thead>
            <tbody>
@@ -167,10 +170,12 @@
              </td>
              <td>
 
-              <a href="{{route('edith_students_reg',$value->student_id)}}"
-               class="btn btn-info btn-sm btn-rounded">EDITH</a>
-              <a href="{{route('promote_students_reg',$value->student_id)}}"
-               class="btn btn-danger btn-sm btn-rounded">PROMOTE</a>
+              <a title="Edith" href="{{route('edith_students_reg',$value->student_id)}}"
+               class="btn btn-info  btn-rounded"><i class="fa fa-edit"></i></a>
+              <a title="Promote" href="{{route('promote_students_reg',$value->student_id)}}"
+               class="btn btn-primary  btn-rounded"><i class="fa fa-check"></i></a>
+              <a target="_blank" title="Print" href="{{route('details_students_reg',$value->student_id)}}"
+               class="btn btn-warning  btn-rounded"><i class="fa fa-eye"></i></a>
              </td>
 
             </tr>

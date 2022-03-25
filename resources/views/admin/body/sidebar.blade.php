@@ -88,6 +88,10 @@ $route = Route::current()->getName();
     </a>
     <ul class="treeview-menu">
      <li><a href="{{route('view_students_reg')}}"><i class="ti-more"></i>Studnt Registration</a></li>
+     <li><a href="{{route('view_roll_generate')}}"><i class="ti-more"></i>Roll Generate</a></li>
+     <li><a href="{{route('view_registration_fee')}}"><i class="ti-more"></i>Registraton Fee</a></li>
+     <li><a href="{{route('view_monthly_fee')}}"><i class="ti-more"></i>Monthly Fee</a></li>
+     <li><a href="{{route('view_examtype_fee')}}"><i class="ti-more"></i>Exam Fee</a></li>
 
     </ul>
    </li>
