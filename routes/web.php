@@ -14,9 +14,11 @@ use App\Http\Controllers\Backend\Setup\AssignSubjectController;
 use App\Http\Controllers\Backend\Students\MonthlyFeeController;
 use App\Http\Controllers\Backend\Students\StudentRegController;
 use App\Http\Controllers\Backend\Setup\StudentSubjectController;
+use App\Http\Controllers\Backend\Employees\EmployeeRegController;
 use App\Http\Controllers\Backend\Setup\StudentExamTypeController;
 use App\Http\Controllers\Backend\Students\RollGenerateController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryAmountController;
+use App\Http\Controllers\Backend\Employees\EmployeeSalaryController;
 use App\Http\Controllers\Backend\Setup\StudentFeeCategoryController;
 use App\Http\Controllers\Backend\Students\RegistrationFeeController;
 
@@ -226,5 +228,37 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/get/exam/paylist', [ExamsFeeController::class, 'GetExamsPaylist'])->name('student.exam.fee.payslist');
 
         Route::get('/student/exam/fee/print', [ExamsFeeController::class, 'GetExamsPayslips'])->name('examtype.fee.payslip');
+    });
+
+
+
+
+
+    Route::prefix('employees')->group(function () {
+
+        Route::get('/registration/veiw', [EmployeeRegController::class, 'veiwEmployee'])->name('view_employees_reg');
+
+        Route::get('/emp/registration/add', [EmployeeRegController::class, 'addEmployee'])->name('add_employees_reg');
+
+        Route::post('/emp/registration/store', [EmployeeRegController::class, 'storeEmployee'])->name('store_employees_reg');
+
+        Route::get('/emp/regis/edit/{id}', [EmployeeRegController::class, 'EdithEmployee'])->name('edith_employees_reg');
+
+        Route::post('/emp/registration/update/{id}', [EmployeeRegController::class, 'StoreEmployees'])->name('update_emp_reg');
+
+        Route::get('/emp/regis/details/{id}', [EmployeeRegController::class, 'DetailsEmployee'])->name('details_employees_reg');
+
+
+
+        //EMPLOYEE SALARY ROUTE....
+
+        Route::get('/emp/regis/salary', [EmployeeSalaryController::class, 'EmployeeSalaryView'])->name('view_employees_salary');
+
+        Route::get('/emp/salary/increment/{id}', [EmployeeSalaryController::class, 'EmployeeSalaryIncrement'])->name('store_employees_salary');
+
+        Route::post('/store/salary/increment/{id}', [EmployeeSalaryController::class, 'EmployeeSalaryIncrementStore'])->name('store_salary_increment');
+
+
+        Route::get('/emp/salary/details/{id}', [EmployeeSalaryController::class, 'EmployeeSalaryDetails'])->name('employees_salary_log');
     });
 });

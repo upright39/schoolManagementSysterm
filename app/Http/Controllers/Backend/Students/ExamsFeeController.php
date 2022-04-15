@@ -77,8 +77,9 @@ class ExamsFeeController extends Controller
 
         $student_id = $request->student_id;
         $class_id = $request->class_id;
-        $examtype_id = $request->examtype_id;
-        $allDetails['ExamType'] = StudentExamType::where('id',  $examtype_id)->first()->name;
+        $allDetails['ExamType'] = StudentExamType::where('id',   $request->examtype_id)->first()->name;
+
+
 
         $allDetails['details'] = AssignStudent::with(['student', 'st_discount_id'])->where('student_id', $student_id)->where('student_class_id',  $class_id)->first();
 

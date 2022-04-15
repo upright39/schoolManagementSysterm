@@ -97,6 +97,20 @@ $route = Route::current()->getName();
    </li>
 
 
+   <li class="treeview {{($prefix == '/employees')?'active':''}}">
+    <a href="#">
+     <i data-feather="mail"></i> <span>Employees Management</span>
+     <span class="pull-right-container">
+      <i class="fa fa-angle-right pull-right"></i>
+     </span>
+    </a>
+    <ul class="treeview-menu">
+     <li><a href="{{route('view_employees_reg')}}"><i class="ti-more"></i>Employees Registration</a></li>
+     <li><a href="{{route('view_employees_salary')}}"><i class="ti-more"></i>Employees Salary</a></li>
+    </ul>
+   </li>
+
+
    <li class="header nav-small-cap">User Interface</li>
 
    <li class="treeview">

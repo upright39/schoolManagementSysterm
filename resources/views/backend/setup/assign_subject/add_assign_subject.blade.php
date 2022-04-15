@@ -44,7 +44,7 @@
            <div class="row">
             <div class="col-4">
              <div class="form-group">
-              <h5>Select Class<span class="text-danger">*</span></h5>
+              <h5>Select Subject<span class="text-danger">*</span></h5>
               <div class="controls">
                <select name="subject_id[]" class="form-control">
                 @foreach($studentSubject as $subject)

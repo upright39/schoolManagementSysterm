@@ -141,7 +141,7 @@ $(document).on('click', '#search', function() {
    var template = Handlebars.compile(source);
    var html = template(data);
    $('#DocumentResults').html(html);
-   $('[data-toggle="tooltip"]').tooltip();
+   $('[data-toggle = "tooltip"]').tooltip();
   }
  });
 });
