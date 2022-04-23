@@ -107,6 +107,7 @@ $route = Route::current()->getName();
     <ul class="treeview-menu">
      <li><a href="{{route('view_employees_reg')}}"><i class="ti-more"></i>Employees Registration</a></li>
      <li><a href="{{route('view_employees_salary')}}"><i class="ti-more"></i>Employees Salary</a></li>
+     <li><a href="{{route('view_employees_leave')}}"><i class="ti-more"></i>Employees Leave</a></li>
     </ul>
    </li>
 

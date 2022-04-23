@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\Setup\StudentSubjectController;
 use App\Http\Controllers\Backend\Employees\EmployeeRegController;
 use App\Http\Controllers\Backend\Setup\StudentExamTypeController;
 use App\Http\Controllers\Backend\Students\RollGenerateController;
+use App\Http\Controllers\Backend\Employees\EmployeeLeaveController;
 use App\Http\Controllers\Backend\Setup\FeeCategoryAmountController;
 use App\Http\Controllers\Backend\Employees\EmployeeSalaryController;
 use App\Http\Controllers\Backend\Setup\StudentFeeCategoryController;
@@ -260,5 +261,23 @@ Route::group(['middleware' => 'auth'], function () {
 
 
         Route::get('/emp/salary/details/{id}', [EmployeeSalaryController::class, 'EmployeeSalaryDetails'])->name('employees_salary_log');
+
+
+
+
+        //EMPLOYEE LEAVE ALL ROUTE....
+
+        Route::get('/emp/leave/view', [EmployeeLeaveController::class, 'EmployeeLeaveView'])->name('view_employees_leave');
+
+        Route::get('/emp/leave/add', [EmployeeLeaveController::class, 'EmployeeLeaveAdd'])->name('add_employees_leave');
+
+        Route::post('/emp/leave/store', [EmployeeLeaveController::class, 'EmployeeLeaveStore'])->name('store_employee_leave');
+
+        Route::get('/emp/leave/edith/{id}', [EmployeeLeaveController::class, 'EmployeeLeaveEdith'])->name('edith_employee_leave');
+
+
+        Route::post('/empl/leave/store/{id}', [EmployeeLeaveController::class, 'EmployeeLeaveUpdate'])->name('update_employee_leave');
+
+        Route::get('/empl/leave/delete/{id}', [EmployeeLeaveController::class, 'EmployeeLeaveDel'])->name('delete_employee_leave');
     });
 });
