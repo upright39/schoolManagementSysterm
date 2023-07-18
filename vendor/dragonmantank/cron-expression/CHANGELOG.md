@@ -1,5 +1,27 @@
 # Change Log
 
+## [3.3.2] - 2022-09-19
+
+### Added
+- N/A
+
+### Changed
+- Skip some daylight savings time tests for PHP 8.1 daylight savings time weirdness (#146)
+
+### Fixed
+- Changed string interpolations to work better with PHP 8.2 (#142)
+
+## [3.3.1] - 2022-01-18
+
+### Added
+- N/A
+
+### Changed
+- N/A
+
+### Fixed
+- Fixed issue when timezones had no transition, which can occur over very short timespans (#134)
+
 ## [3.3.0] - 2022-01-13
 
 ### Added

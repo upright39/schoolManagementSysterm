@@ -18,6 +18,10 @@ use  PDF;
 class StudentRegController extends Controller
 {
 
+    public function showTable(Request $request){
+        $data['searchData'] = $request->input('Search');
+        return view('backend.students.student_registration.view_student_reg', $data);
+    }
 
     public function studentRegVeiw()
     {

@@ -46,12 +46,10 @@
               <select name="student_class_id" required="" class="form-control">
                <option value="" selected="">select Class</option>
                @foreach($Classes as $class)
-               <option value="{{$class->id}}" {{( @$student_class_id==$class->id)?'selected':''}}>{{$class->name}}
+               <option value="{{$class->id}}" {{( @$student_class_id == $class->id)?'selected':''}}>{{$class->name}}
                </option>
                @endforeach
-
               </select>
-
              </div>
 
             </div>
@@ -83,7 +81,7 @@
         <div class="box-body ">
          <div class="table-responsive">
 
-          @if(!@Search)
+          @if(isset($searchData))
           <table id="example1" class="table table-bordered table-striped">
            <thead>
             <tr>
